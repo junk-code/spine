@@ -1,0 +1,32 @@
+# The `THEME_NAME.info.yml` file
+
+Belongs: in the root of the theme directory
+Formatting:
+  - 2 space indents (no tabs)
+  - YAML syntax
+
+Properties:
+
+| Field Name           | Notes                                                                                                          | valueType | Example                                                                                                                 | isRequired |
+| -------------------- | -------------------------------------------------------------------------------------------------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------- | ---------- |
+| name                 | The Name of the Theme                                                                                          | string    | Fluffyness                                                                                                              | X          |
+| type                 | Should be 'theme' for this file.                                                                               | string    | theme                                                                                                                   | X          |
+| core                 | Specifies version of Drupal version                                                                            | string    | 8.x                                                                                                                     | X          |
+| description          | Dispalyed in Admin / Appearance                                                                                | string    | An extra cuddly Drupal Theme                                                                                            |            |
+| package              | Allows you to group themes together                                                                            | string    | Core                                                                                                                    |            |
+| php                  | Specifies min version of PHP. Defaults to `DRUPAL_MINIMUM_PHP`                                                 | string    | 5.5.9                                                                                                                   |            |
+| version              | Specifies a version. *Do not specify, will be filled in automatically*                                         | string    | 8.x-1.0                                                                                                                 |            |
+| libraries            | A list of [libraries](https://www.drupal.org/node/2216195) (CSS + JS) to add to ALL PAGES that theme is active | [string]  | {[see here](https://www.drupal.org/docs/8/theming-drupal-8/defining-a-theme-with-an-infoyml-file#libraries)}            |            |
+| libraries-override   | A list of [Overwritten Libraries.](https://www.drupal.org/node/2216195#override-extend)                        | [object]  | {[see here](https://www.drupal.org/docs/8/theming-drupal-8/defining-a-theme-with-an-infoyml-file#libraries-override)}   |            |
+| base-theme           | Reccomended to be `classy` or `stable`, `stable` is the default value.                                         | string    | stable                                                                                                                  |            |
+| hidden               | indicates whether to hide in Admin > Appearance UI.                                                            | bool      | true                                                                                                                    |            |
+| engine               | Theme Engine, defaults to `twig`.                                                                              | string    | twig                                                                                                                    |            |
+| logo                 | relative path to the theme's logo. usually `logo.svg`                                                          | string    | images/logo.png                                                                                                         |            |
+| screenshot           | relative path to a screenshot. (588px x 438px). usually `screenshot.png`                                       | string    | fluffiness.png                                                                                                          |            |
+| regions              | object (key value) of theme's regions. `content` key is always required.                                       | object    | {[see here](https://www.drupal.org/docs/8/theming-drupal-8/defining-a-theme-with-an-infoyml-file#regions)}              |            |
+| regions_hidden       | inherited regions to hide. (list of strings)                                                                   | [string]  | {[see here](https://www.drupal.org/docs/8/theming-drupal-8/defining-a-theme-with-an-infoyml-file#regions_hidden)}       |            |
+| features             | list of features to show in theme settings.                                                                    | [string]  | {[see here](https://www.drupal.org/docs/8/theming-drupal-8/defining-a-theme-with-an-infoyml-file#features)}             |            |
+| stylesheets-remove   | (**depreciated**)                                                                                              |           |                                                                                                                         |            |
+| ckeditor_stylesheets | list of css stylesheets to add to CKEditior frame.                                                             | [string]  | {[see here](https://www.drupal.org/docs/8/theming-drupal-8/defining-a-theme-with-an-infoyml-file#ckeditor_stylesheets)} |            |
+
+SEE: [Defining a theme with an .info.yml file](https://www.drupal.org/docs/8/theming-drupal-8/defining-a-theme-with-an-infoyml-file#libraries-override)
