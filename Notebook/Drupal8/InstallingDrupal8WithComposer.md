@@ -1,6 +1,6 @@
 ## Install Needed Programs:
 ```
-$ sudo yum install git zip unzip php-mbstring php-xml php-gd php-pdo php-libsodium php-soap php-zip
+$ sudo yum install git zip unzip php-mbstring php-xml php-gd php-pdo php-libsodium php-soap php-zip php-opcache php-mysqlnd php-pecl-uploadprogress
 ```
 
 After installing, stop and restart apache with:
@@ -28,5 +28,3 @@ $ sudo chcon -R -t httpd_sys_content_rw_t /var/www/html/${root}/web/sites/defaul
 $ sudo chmod -R 777 /var/www/html/${root}/web/sites/default/files/
 ```
 That makes SELinux happy and Linux allows everybody to play in that folder.
-
-### Pretty URLs
